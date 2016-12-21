@@ -14,6 +14,12 @@ abstract class BaseView : FrameLayout {
 
   lateinit protected var viewComponent: ViewComponent
 
+  private val activityComponent: ActivityComponent
+    get() = (context as BaseActivity).activityComponent
+
+  private val viewModule: ViewModule
+    get() = ViewModule(this)
+
   constructor(context: Context) : super(context) {
     init()
   }
@@ -30,12 +36,6 @@ abstract class BaseView : FrameLayout {
   protected abstract val layoutRes: Int
 
   protected abstract fun initializeInjector()
-
-  private val activityComponent: ActivityComponent
-    get() = (context as BaseActivity).activityComponent
-
-  private val viewModule: ViewModule
-    get() = ViewModule(this)
 
   private fun init() {
     initViewComponent()
