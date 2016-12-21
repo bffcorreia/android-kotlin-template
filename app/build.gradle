@@ -36,10 +36,6 @@ android {
       java.srcDir sharedTestDir
     }
   }
-
-  sourceSets {
-    main.java.srcDirs += 'src/main/kotlin'
-  }
 }
 
 kapt {
