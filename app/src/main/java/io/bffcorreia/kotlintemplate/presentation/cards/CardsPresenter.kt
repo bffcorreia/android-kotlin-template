@@ -1,6 +1,7 @@
 package io.bffcorreia.kotlintemplate.presentation.cards
 
 import io.bffcorreia.kotlintemplate.common.di.PerActivity
+import io.bffcorreia.kotlintemplate.data.Card
 import io.bffcorreia.kotlintemplate.domain.GetCards
 import rx.subscriptions.CompositeSubscription
 import timber.log.Timber
@@ -25,9 +26,15 @@ import javax.inject.Inject
 
   private fun initView() {
     val subscriber = getCards.observable().subscribe(
-        { cards -> view.showCards(cards.toString()) },
+        { cards -> onCardsReceived(cards) },
         { error -> Timber.e(error) }
     )
     subscriptions.add(subscriber)
+  }
+
+  private fun onCardsReceived(cards: List<Card>) {
+    if (cards.isNotEmpty()) {
+      view.showCards(cards.toString())
+    }
   }
 }
