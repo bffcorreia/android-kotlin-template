@@ -1,4 +1,4 @@
-package io.bffcorreia.spontaneousevents.common.di
+package io.bffcorreia.kotlintemplate.common.di
 
 import android.view.View
 import dagger.Module

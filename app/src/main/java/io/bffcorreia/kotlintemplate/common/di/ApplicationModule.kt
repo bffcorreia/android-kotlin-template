@@ -1,10 +1,10 @@
-package io.bffcorreia.spontaneousevents.common.di
+package io.bffcorreia.kotlintemplate.common.di
 
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import io.bffcorreia.spontaneousevents.common.AndroidApplication
-import io.bffcorreia.spontaneousevents.domain.Executor
+import io.bffcorreia.kotlintemplate.common.AndroidApplication
+import io.bffcorreia.kotlintemplate.domain.Executor
 import rx.Scheduler
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers

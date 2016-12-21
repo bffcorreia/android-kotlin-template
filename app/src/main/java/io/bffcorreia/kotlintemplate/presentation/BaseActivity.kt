@@ -1,12 +1,12 @@
-package io.bffcorreia.spontaneousevents.presentation
+package io.bffcorreia.kotlintemplate.presentation
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import butterknife.ButterKnife
-import io.bffcorreia.spontaneousevents.common.AndroidApplication
-import io.bffcorreia.spontaneousevents.common.di.ActivityComponent
-import io.bffcorreia.spontaneousevents.common.di.ActivityModule
-import io.bffcorreia.spontaneousevents.common.di.ApplicationComponent
+import io.bffcorreia.kotlintemplate.common.AndroidApplication
+import io.bffcorreia.kotlintemplate.common.di.ActivityComponent
+import io.bffcorreia.kotlintemplate.common.di.ActivityModule
+import io.bffcorreia.kotlintemplate.common.di.ApplicationComponent
 
 abstract class BaseActivity : AppCompatActivity() {
 

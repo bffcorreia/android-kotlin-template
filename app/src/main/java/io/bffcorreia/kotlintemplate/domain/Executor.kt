@@ -1,4 +1,4 @@
-package io.bffcorreia.spontaneousevents.domain
+package io.bffcorreia.kotlintemplate.domain
 
 class Executor {
   companion object {

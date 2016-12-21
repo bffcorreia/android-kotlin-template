@@ -1,4 +1,4 @@
-package io.bffcorreia.spontaneousevents.presentation
+package io.bffcorreia.kotlintemplate.presentation
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import butterknife.ButterKnife
-import io.bffcorreia.spontaneousevents.common.di.ActivityComponent
-import io.bffcorreia.spontaneousevents.common.di.ViewComponent
-import io.bffcorreia.spontaneousevents.common.di.ViewModule
+import io.bffcorreia.kotlintemplate.common.di.ActivityComponent
+import io.bffcorreia.kotlintemplate.common.di.ViewComponent
+import io.bffcorreia.kotlintemplate.common.di.ViewModule
 
 abstract class BaseView : FrameLayout {
 

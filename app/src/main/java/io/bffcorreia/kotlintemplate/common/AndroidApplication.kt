@@ -1,10 +1,10 @@
-package io.bffcorreia.spontaneousevents.common
+package io.bffcorreia.kotlintemplate.common
 
 import android.app.Application
 import io.bffcorreia.kotlintemplate.BuildConfig
-import io.bffcorreia.spontaneousevents.common.di.ApplicationComponent
-import io.bffcorreia.spontaneousevents.common.di.ApplicationModule
-import io.bffcorreia.spontaneousevents.common.di.DaggerApplicationComponent
+import io.bffcorreia.kotlintemplate.common.di.ApplicationComponent
+import io.bffcorreia.kotlintemplate.common.di.ApplicationModule
+import io.bffcorreia.kotlintemplate.common.di.DaggerApplicationComponent
 import timber.log.Timber
 
 class AndroidApplication : Application() {
