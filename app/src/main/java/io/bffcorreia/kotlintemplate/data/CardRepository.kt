@@ -15,7 +15,7 @@ open class CardRepository @Inject constructor() {
     cards.add(Card("Bruno"))
     cards.add(Card("Sérgio"))
     cards.add(Card("Mário"))
-    cards.add(Card("Claudia"))
+    cards.add(Card("Cláudia"))
     return cards
   }
 }
