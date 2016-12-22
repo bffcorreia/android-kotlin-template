@@ -12,10 +12,10 @@ open class CardRepository @Inject constructor() {
 
   private fun buildCards(): List<Card> {
     val cards = ArrayList<Card>()
-    cards.add(Card("Bruno"))
-    cards.add(Card("Sérgio"))
-    cards.add(Card("Mário"))
-    cards.add(Card("Cláudia"))
+    cards.add(Card("Chuck"))
+    cards.add(Card("Narrator"))
+    cards.add(Card("Tyler"))
+    cards.add(Card("Marla"))
     return cards
   }
 }

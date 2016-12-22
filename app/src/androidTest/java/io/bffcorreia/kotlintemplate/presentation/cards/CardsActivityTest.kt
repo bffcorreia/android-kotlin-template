@@ -25,7 +25,7 @@ import org.junit.runner.RunWith
   }
 
   @Test fun testCards() {
-    val cards = "[Card(name=Bruno), Card(name=Sérgio), Card(name=Mário), Card(name=Cláudia)]"
+    val cards = "[Card(name=Chuck), Card(name=Narrator), Card(name=Tyler), Card(name=Marla)]"
     onView(withText(cards)).check(ViewAssertions.matches(isDisplayed()))
   }
 }
