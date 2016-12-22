@@ -6,9 +6,6 @@
     <item name="colorPrimaryDark">@color/primaryDark</item>
     <item name="colorAccent">@color/secondary</item>
 
-    <item name="windowActionBar">false</item>
-    <item name="windowNoTitle">true</item>
-
     <item name="android:windowBackground">@color/background</item>
     <item name="android:textColor">@color/text</item>
     <item name="android:textColorHint">@color/text_hint</item>
@@ -20,6 +17,7 @@
   </style>
 
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>
