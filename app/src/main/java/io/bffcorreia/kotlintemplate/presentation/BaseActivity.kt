@@ -12,12 +12,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
   lateinit var activityComponent: ActivityComponent
 
-  private val applicationComponent: ApplicationComponent
-    get() = (application as AndroidApplication).applicationComponent
-
-  private val activityModule: ActivityModule
-    get() = ActivityModule(this)
-
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(layoutRes)
@@ -31,6 +25,9 @@ abstract class BaseActivity : AppCompatActivity() {
   protected abstract fun initializeInjector()
 
   private fun initActivityComponent() {
-    activityComponent = applicationComponent.plus(activityModule)
+    activityComponent = applicationComponent().plus(ActivityModule(this))
   }
+
+  private fun applicationComponent(): ApplicationComponent =
+      (application as AndroidApplication).applicationComponent
 }

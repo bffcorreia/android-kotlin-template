@@ -14,12 +14,6 @@ abstract class BaseView : FrameLayout {
 
   lateinit protected var viewComponent: ViewComponent
 
-  private val activityComponent: ActivityComponent
-    get() = (context as BaseActivity).activityComponent
-
-  private val viewModule: ViewModule
-    get() = ViewModule(this)
-
   constructor(context: Context) : super(context) {
     init()
   }
@@ -47,6 +41,8 @@ abstract class BaseView : FrameLayout {
   }
 
   private fun initViewComponent() {
-    viewComponent = activityComponent.plus(viewModule)
+    viewComponent = activityComponent().plus(ViewModule(this))
   }
+
+  private fun activityComponent(): ActivityComponent = (context as BaseActivity).activityComponent
 }
