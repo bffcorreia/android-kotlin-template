@@ -5,15 +5,8 @@ import java.util.*
 
 abstract class BaseFactory<out T> {
 
-  companion object {
-    const val DEFAULT_LIST_SIZE = 3
-  }
-
-  protected val faker: Faker
-
-  init {
-    faker = Faker()
-  }
+  private val DEFAULT_LIST_SIZE = 3
+  protected val faker = Faker()
 
   abstract fun build(): T
 
