@@ -1,7 +1,7 @@
 package io.bffcorreia.kotlintemplate.presentation.cards
 
 import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.assertion.ViewAssertions
+import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.rule.ActivityTestRule
@@ -21,11 +21,11 @@ import org.junit.runner.RunWith
   }
 
   @Test fun testTitle() {
-    onView(withText(R.string.app_name)).check(ViewAssertions.matches(isDisplayed()))
+    onView(withText(R.string.app_name)).check(matches(isDisplayed()))
   }
 
   @Test fun testCards() {
     val cards = "[Card(name=Chuck), Card(name=Narrator), Card(name=Tyler), Card(name=Marla)]"
-    onView(withText(cards)).check(ViewAssertions.matches(isDisplayed()))
+    onView(withText(cards)).check(matches(isDisplayed()))
   }
 }

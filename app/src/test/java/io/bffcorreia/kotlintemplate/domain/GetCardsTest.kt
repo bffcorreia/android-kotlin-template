@@ -4,7 +4,7 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.bffcorreia.kotlintemplate.CardFactory
 import io.bffcorreia.kotlintemplate.data.CardRepository
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
 import rx.Observable
@@ -25,6 +25,6 @@ class GetCardsTest {
     val cards = cardFactory.buildList()
     whenever(cardRepository.getCards()).thenReturn(Observable.just(cards))
     val returnedCards = getCards.observable().toBlocking().first()
-    Assertions.assertThat(cards).isEqualTo(returnedCards)
+    assertThat(cards).isEqualTo(returnedCards)
   }
 }
