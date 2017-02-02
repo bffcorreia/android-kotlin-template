@@ -4,9 +4,9 @@ import rx.Observable
 import java.util.*
 import javax.inject.Inject
 
-open class CardRepository @Inject constructor() {
+class CardRepository @Inject constructor() {
 
-  open fun getCards(): Observable<List<Card>> {
+  fun getCards(): Observable<List<Card>> {
     return Observable.from(buildCards()).toList()
   }
 
