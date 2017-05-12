@@ -1,3 +1,5 @@
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=590d0284b8439b00017d0286&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/590d0284b8439b00017d0286/build/latest?branch=master)
+
 # Android app starter template (with Kotlin)
 
 Based on [blocoio/android-template](https://github.com/blocoio/android-template).
