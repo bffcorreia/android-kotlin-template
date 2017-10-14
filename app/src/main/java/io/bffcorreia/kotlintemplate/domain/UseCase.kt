@@ -1,7 +1,7 @@
 package io.bffcorreia.kotlintemplate.domain
 
-import rx.Observable
-import rx.Scheduler
+import io.reactivex.Observable
+import io.reactivex.Scheduler
 
 abstract class UseCase<T> constructor(private val subscribeOn: Scheduler,
     private val observeOn: Scheduler) {

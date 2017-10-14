@@ -2,8 +2,8 @@ package io.bffcorreia.kotlintemplate.domain
 
 import io.bffcorreia.kotlintemplate.data.Card
 import io.bffcorreia.kotlintemplate.data.CardRepository
-import rx.Observable
-import rx.Scheduler
+import io.reactivex.Observable
+import io.reactivex.Scheduler
 import javax.inject.Inject
 import javax.inject.Named
 

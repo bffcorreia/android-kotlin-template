@@ -5,9 +5,9 @@ import dagger.Module
 import dagger.Provides
 import io.bffcorreia.kotlintemplate.common.AndroidApplication
 import io.bffcorreia.kotlintemplate.domain.Executor
-import rx.Scheduler
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Named
 import javax.inject.Singleton
 

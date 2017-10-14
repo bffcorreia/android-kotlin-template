@@ -59,8 +59,8 @@ dependencies {
   compile 'com.jakewharton:butterknife:8.8.1'
   kapt 'com.jakewharton:butterknife-compiler:8.8.1'
   // RxJava & RxAndroid
-  compile 'io.reactivex:rxjava:1.2.3'
-  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+  compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
   // Unit Tests
   testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   testCompile 'junit:junit:4.12'

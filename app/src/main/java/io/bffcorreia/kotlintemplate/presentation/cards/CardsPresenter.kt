@@ -3,7 +3,7 @@ package io.bffcorreia.kotlintemplate.presentation.cards
 import io.bffcorreia.kotlintemplate.common.di.PerActivity
 import io.bffcorreia.kotlintemplate.data.Card
 import io.bffcorreia.kotlintemplate.domain.GetCards
-import rx.subscriptions.CompositeSubscription
+import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -11,7 +11,7 @@ import javax.inject.Inject
 @Inject constructor(private val getCards: GetCards) : CardsContract.Presenter {
 
   private lateinit var view: CardsContract.View
-  private val subscriptions = CompositeSubscription()
+  private val disposables = CompositeDisposable()
 
   override fun start(view: CardsContract.View) {
     this.view = view
@@ -19,17 +19,17 @@ import javax.inject.Inject
   }
 
   override fun stop() {
-    if (!subscriptions.isUnsubscribed) {
-      subscriptions.unsubscribe()
+    if (!disposables.isDisposed) {
+      disposables.dispose()
     }
   }
 
   private fun initView() {
-    val subscriber = getCards.observable().subscribe(
+    val disposable = getCards.observable().subscribe(
         { cards -> onCardsReceived(cards) },
         { error -> Timber.e(error) }
     )
-    subscriptions.add(subscriber)
+    disposables.add(disposable)
   }
 
   private fun onCardsReceived(cards: List<Card>) {

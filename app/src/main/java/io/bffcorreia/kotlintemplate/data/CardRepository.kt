@@ -1,13 +1,13 @@
 package io.bffcorreia.kotlintemplate.data
 
-import rx.Observable
+import io.reactivex.Observable
 import java.util.*
 import javax.inject.Inject
 
 class CardRepository @Inject constructor() {
 
   fun getCards(): Observable<List<Card>> {
-    return Observable.from(buildCards()).toList()
+    return Observable.fromArray(buildCards())
   }
 
   private fun buildCards(): List<Card> {
