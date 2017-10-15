@@ -4,27 +4,29 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.bffcorreia.kotlintemplate.CardFactory
 import io.bffcorreia.kotlintemplate.data.CardRepository
+import io.reactivex.Observable
+import io.reactivex.schedulers.Schedulers
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
-import rx.Observable
-import rx.schedulers.Schedulers
 
 class GetCardsTest {
 
-  val cardRepository = mock<CardRepository>()
-  lateinit var getCards: GetCards
-  lateinit var cardFactory: CardFactory
+  private val cardRepository = mock<CardRepository>()
+  private lateinit var getCards: GetCards
+  private lateinit var cardFactory: CardFactory
 
-  @Before fun setup() {
-    getCards = GetCards(cardRepository, Schedulers.immediate(), Schedulers.immediate())
+  @Before
+  fun setup() {
+    getCards = GetCards(cardRepository, Schedulers.trampoline(), Schedulers.trampoline())
     cardFactory = CardFactory()
   }
 
-  @Test fun testGetCards() {
+  @Test
+  fun testGetCards() {
     val cards = cardFactory.buildList()
     whenever(cardRepository.getCards()).thenReturn(Observable.just(cards))
-    val returnedCards = getCards.observable().toBlocking().first()
+    val returnedCards = getCards.observable().blockingFirst()
     assertThat(cards).isEqualTo(returnedCards)
   }
 }

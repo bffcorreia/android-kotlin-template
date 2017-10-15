@@ -8,12 +8,14 @@ class CardRepositoryTest {
 
   private lateinit var cardRepository: CardRepository
 
-  @Before fun setup() {
+  @Before
+  fun setup() {
     cardRepository = CardRepository()
   }
 
-  @Test fun getAllCards() {
-    val cards = cardRepository.getCards().toBlocking().first()
+  @Test
+  fun getAllCards() {
+    val cards = cardRepository.getCards().blockingFirst()
     assertThat(cards.size).isEqualTo(4)
   }
 }

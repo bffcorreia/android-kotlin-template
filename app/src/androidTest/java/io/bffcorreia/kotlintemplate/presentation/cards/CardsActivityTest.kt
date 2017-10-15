@@ -12,19 +12,25 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class) class CardsActivityTest {
+@RunWith(AndroidJUnit4::class)
+class CardsActivityTest {
 
-  @Rule @JvmField val activityRule = ActivityTestRule<CardsActivity>(CardsActivity::class.java)
+  @Rule
+  @JvmField
+  val activityRule = ActivityTestRule<CardsActivity>(CardsActivity::class.java)
 
-  @Test fun testActivityStarted() {
+  @Test
+  fun testActivityStarted() {
     assertCurrentActivity(CardsActivity::class.java)
   }
 
-  @Test fun testTitle() {
+  @Test
+  fun testTitle() {
     onView(withText(R.string.app_name)).check(matches(isDisplayed()))
   }
 
-  @Test fun testCards() {
+  @Test
+  fun testCards() {
     val cards = "[Card(name=Chuck), Card(name=Narrator), Card(name=Tyler), Card(name=Marla)]"
     onView(withText(cards)).check(matches(isDisplayed()))
   }
