@@ -30,7 +30,7 @@ jobs:
           name: fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - run:
-          command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
+          command: cp $FL_OUTPUT_DIR/reports/report.junit $FL_OUTPUT_DIR/reports/results.xml
           when: always
       - store_artifacts:
           path: app/build/reports
