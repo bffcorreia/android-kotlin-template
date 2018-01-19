@@ -14,9 +14,9 @@ jobs:
           keys:
             - 1-gems-{{ checksum "Gemfile.lock" }}
             - jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run: bundle check || bundle install --path vendor/bundle
       - run:
           name: Download Dependencies
-          command: bundle check || bundle install --path vendor/bundle
           command: ./gradlew androidDependencies
       - save_cache:
           key: 1-gems-{{ checksum "Gemfile.lock" }}
