@@ -27,8 +27,18 @@ jobs:
           paths:
             - ~/.gradle
       - run:
-          name: fastlane
+          name: Run Unit Tests
           command: bundle exec fastlane test
+      - run:
+          name: Setup emulator
+          command: sdkmanager "system-images;android-22;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-22;default;armeabi-v7a"
+      - run:
+          name: Launch emulator
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
+          background: true
+      - run:
+          name: Run Instrumentation Tests
+          command: ./gradlew connectedDebugAndroidTest
       - store_artifacts:
           path: app/build/reports
           destination: reports
