@@ -13,8 +13,8 @@ jobs:
             - 1-gems-{{ checksum "Gemfile.lock" }}
             - jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-        name: Download Ruby Dependencies
-        command: bundle check || bundle install --path vendor/bundle
+          name: Download Ruby Dependencies
+          command: bundle check || bundle install --path vendor/bundle
       - run:
           name: Download Android Dependencies
           command: ./gradlew androidDependencies
