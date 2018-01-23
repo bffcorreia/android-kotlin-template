@@ -12,9 +12,17 @@
 default_platform(:android)
 
 platform :android do
-  desc "Runs all the tests"
-  lane :test do
+  desc "Runs unit tests"
+  lane :unit_tests do
     gradle(task: "test")
+  end
+
+  desc "Runs integration tests"
+  lane :integration_tests do |options|
+  automated_test_emulator_run(
+      AVD_setup_path: "fastlane/AVD_setup.json",
+      gradle_task: "connected#{options[:build_variant]}AndroidTest"
+      )
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
