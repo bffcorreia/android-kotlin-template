@@ -31,7 +31,7 @@ jobs:
           command: bundle exec fastlane unit_tests release:false
       - run:
           name: Setup emulator
-          command: sdkmanager "system-images;android-25;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
+          command: sdkmanager "system-images;android-22;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-22;default;armeabi-v7a"
       - run:
           name: Run Integration Tests
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && bundle exec fastlane integration_tests

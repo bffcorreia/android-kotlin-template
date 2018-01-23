@@ -1,11 +1,11 @@
 {
   "avd_list": [
     {
-      "avd_name": "Fastlane_Nexus_5X_API_25",
+      "avd_name": "Fastlane_Nexus_5X_API_22",
 
-      "create_avd_package": "system-images;android-25;google_apis;armeabi-v7a",
+      "create_avd_package": "system-images;android-22;default;armeabi-v7a",
       "create_avd_device": "Nexus 5X",
-      "create_avd_tag": "google_apis",
+      "create_avd_tag": "default",
       "create_avd_abi": "armeabi-v7a",
       "create_avd_additional_options": "",
       "create_avd_hardware_config_filepath": "",
@@ -13,7 +13,7 @@
       "launch_avd_port": "",
       "launch_avd_snapshot_filepath": "",
       "launch_avd_launch_binary_name": "emulator64-arm",
-      "launch_avd_additional_options": "-skin 480x640 -noaudio -no-boot-anim -no-window -accel on"
+      "launch_avd_additional_options": "-noaudio -no-boot-anim -no-window -accel on"
     }
   ]
 }
