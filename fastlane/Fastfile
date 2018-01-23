@@ -13,8 +13,9 @@ default_platform(:android)
 
 platform :android do
   desc "Runs unit tests"
-  lane :unit_tests do
-    gradle(task: "test")
+  lane :unit_tests do |options|
+    build_type = options[:release] ? "Release" : "Debug"
+    gradle(task: "test", build_type: build_type)
   end
 
   desc "Runs integration tests"
