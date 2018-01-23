@@ -40,32 +40,32 @@ jobs:
 
   deploy-beta-job:
     steps:
-      -run:
+      - run:
         name: Deploying to Crashlytics Beta
         command: bundle exec fastlane beta
 
   deploy-prod-job:
     steps:
-      -run:
+      - run:
         name: Deploying to Play Store
         command: bundle exec fastlane deploy
 
-  workflows:
-    version: 2
-    build-deploy:
-      jobs:
-        - build-job
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job
 
-        - deploy-beta-job:
-            requires:
-              - build-job
-            filters:
-              branches:
-                only: beta
+      - deploy-beta-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: beta
 
-        - deploy-prod-job:
-            requires:
-              - build-job
-            filters:
-              branches:
-                only: production
+      - deploy-prod-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: production
