@@ -30,6 +30,9 @@ jobs:
           name: Run Unit Tests
           command: bundle exec fastlane unit_tests release:false
       - run:
+          name: Setup emulator
+          command: sdkmanager "system-images;android-25;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
+      - run:
           name: Run Integration Tests
           command: bundle exec fastlane integration_tests
       - store_artifacts:
