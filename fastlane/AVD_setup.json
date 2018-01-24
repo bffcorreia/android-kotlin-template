@@ -1,9 +1,9 @@
 {
   "avd_list": [
     {
-      "avd_name": "Nexus_5X_API_25",
+      "avd_name": "Nexus_5X_API_22",
 
-      "create_avd_package": "system-images;android-25;google_apis;armeabi-v7a",
+      "create_avd_package": "system-images;android-22;google_apis;armeabi-v7a",
       "create_avd_device": "Nexus 5X",
       "create_avd_tag": "google_apis",
       "create_avd_abi": "armeabi-v7a",
