@@ -13,7 +13,7 @@
       "launch_avd_port": "",
       "launch_avd_snapshot_filepath": "",
       "launch_avd_launch_binary_name": "emulator64-arm",
-      "launch_avd_additional_options": "-skin 480x640 -noaudio -no-boot-anim -no-window -accel on"
+      "launch_avd_additional_options": "-noaudio -no-boot-anim -no-window -accel on"
     }
   ]
 }
