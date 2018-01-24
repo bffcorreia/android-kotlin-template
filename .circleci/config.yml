@@ -31,7 +31,7 @@ jobs:
           command: bundle exec fastlane unit_tests release:false
       - run:
           name: Setup emulator
-          command: sdkmanager "system-images;android-27;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n Nexus_5X_API_27 -k "system-images;android-27;google_apis;armeabi-v7a"
+          command: sdkmanager "system-images;android-25;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n Nexus_5X_API_25 -k "system-images;android-25;google_apis;armeabi-v7a"
       - run:
           name: Run Integration Tests
           command: bundle exec fastlane integration_tests
