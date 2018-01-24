@@ -22,6 +22,10 @@ platform :android do
   lane :integration_tests do
     automated_test_emulator_run(
       AVD_setup_path: "fastlane/AVD_setup.json",
+      AVD_recreate_new: false,
+      AVD_clean_after: false,
+      AVD_param_launch_timeout: "600",
+      AVD_adb_launch_timeout: "600",
       gradle_task: "connectedDebugAndroidTest")
   end
 
