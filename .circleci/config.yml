@@ -34,6 +34,7 @@ jobs:
           command: sdkmanager "system-images;android-22;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n Nexus_5X_API_22 -k "system-images;android-22;google_apis;armeabi-v7a"
       - run:
           name: Run Integration Tests
+          no_output_timeout: 30m
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && bundle exec fastlane integration_tests
       - store_artifacts:
           path: app/build/reports
