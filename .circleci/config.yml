@@ -34,7 +34,7 @@ jobs:
           command: sdkmanager "system-images;android-22;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n Nexus_5X_API_22 -k "system-images;android-22;google_apis;armeabi-v7a"
       - run:
           name: Launch emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd Nexus_5X_API_22 -noaudio -no-boot-anim -no-window -accel on
           background: true
       - run:
           name: Wait for emulator
